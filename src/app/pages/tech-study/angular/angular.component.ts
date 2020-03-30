@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MENU_LIST } from 'src/app/core/auth-menu.model';
+import {Component, OnInit} from '@angular/core';
+import {MENU_LIST} from 'src/app/core/auth-menu.model';
 
 @Component({
   selector: 'app-angular',
@@ -9,7 +9,9 @@ import { MENU_LIST } from 'src/app/core/auth-menu.model';
 export class AngularComponent implements OnInit {
 
   public menuList = MENU_LIST;
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
