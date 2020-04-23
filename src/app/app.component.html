@@ -1,14 +1,13 @@
 <div class="home-wrapper">
   <div class="menu">
     <ul nz-menu nzMode="horizontal">
-      <ng-container *ngFor="let menu of menuList">
-        <li *ngIf="!hasChildren(menu)" nz-menu-item>
-          <i nz-icon nzType="mail"></i>
+      <ng-container *ngFor="let menu of menuList; let i = index">
+        <li *ngIf="!hasChildren(menu)" nz-menu-item [nzSelected]="i === selectedMenuIndex">
+          <!-- <i nz-icon nzType="mail"></i> -->
           {{menu.title}}
         </li>
-        <li *ngIf="hasChildren(menu)" nz-submenu [nzTitle]="menu.title" nzIcon="setting">
+        <li *ngIf="hasChildren(menu)" nz-submenu [nzTitle]="menu.title"  [nzSelected]="i === selectedMenuIndex">
           <ul>
-            <!-- <li nz-menu-item nzSelected>angular</li> -->
             <li *ngFor="let child of menu.children" nz-menu-item>{{child.title}}</li>
           </ul>
         </li>
@@ -16,3 +15,4 @@
     </ul>
   </div>
 </div>
+<router-outlet></router-outlet>
