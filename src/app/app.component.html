@@ -6,7 +6,7 @@
           <!-- <i nz-icon nzType="mail"></i> -->
           {{menu.title}}
         </li>
-        <li *ngIf="hasChildren(menu)" nz-submenu [nzTitle]="menu.title"  [nzSelected]="i === selectedMenuIndex">
+        <li *ngIf="hasChildren(menu)" nz-submenu [nzTitle]="menu.title">
           <ul>
             <li *ngFor="let child of menu.children" nz-menu-item>{{child.title}}</li>
           </ul>
